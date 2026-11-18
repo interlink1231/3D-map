@@ -14,10 +14,9 @@ export default function KoreaMap({ onReady }: Props) {
     let localViewer: CesiumViewer | undefined;
 
     async function initialize() {
+      (window as Window & { CESIUM_BASE_URL?: string }).CESIUM_BASE_URL = "/cesium/";
       const Cesium = await import("cesium");
       if (cancelled || !containerRef.current) return;
-
-      (window as Window & { CESIUM_BASE_URL?: string }).CESIUM_BASE_URL = "/cesium/";
       if (process.env.NEXT_PUBLIC_CESIUM_ION_TOKEN) {
         Cesium.Ion.defaultAccessToken = process.env.NEXT_PUBLIC_CESIUM_ION_TOKEN;
       }
