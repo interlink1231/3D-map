@@ -33,7 +33,7 @@ export default function KoreaMap({ onReady }: Props) {
         infoBox: false,
         selectionIndicator: false,
         shouldAnimate: false,
-        terrain: new Cesium.EllipsoidTerrainProvider(),
+        terrainProvider: new Cesium.EllipsoidTerrainProvider(),
         imageryProvider: new Cesium.OpenStreetMapImageryProvider({ url: "https://tile.openstreetmap.org/" }),
       });
 
